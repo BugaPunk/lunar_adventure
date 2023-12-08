@@ -39,7 +39,7 @@
 [ext_resource path="res://GUI/XP.gd" type="Script" id=37]
 [ext_resource path="res://Fonts/Font.tres" type="DynamicFont" id=38]
 [ext_resource path="res://GUI/HealthPotions.gd" type="Script" id=39]
-[ext_resource path="res://GUI/potions.png" type="Texture" id=40]
+[ext_resource path="res://Entities/Potion/small_potions.png" type="Texture" id=40]
 [ext_resource path="res://GUI/ManaPotions.gd" type="Script" id=41]
 [ext_resource path="res://GUI/LevelPopup.gd" type="Script" id=42]
 [ext_resource path="res://GUI/health_bonus.png" type="Texture" id=43]
@@ -294,9 +294,6 @@ margin_right = 196.0
 margin_bottom = 178.0
 color = Color( 0, 0, 0, 0.627451 )
 script = ExtResource( 37 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LabelXP" type="Label" parent="CanvasLayer/XP"]
 margin_left = 2.0
@@ -312,7 +309,7 @@ margin_top = 10.0
 margin_right = 22.0
 margin_bottom = 20.0
 custom_fonts/font = ExtResource( 38 )
-text = "LVL:"
+text = "NVL:"
 
 [node name="ValueXP" type="Label" parent="CanvasLayer/XP"]
 margin_left = 21.0
@@ -333,7 +330,6 @@ text = "1"
 align = 2
 
 [node name="HealthPotions" type="ColorRect" parent="CanvasLayer"]
-visible = false
 margin_left = 243.0
 margin_top = 158.0
 margin_right = 279.0
@@ -348,7 +344,7 @@ __meta__ = {
 position = Vector2( 10, 10 )
 texture = ExtResource( 40 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 16 )
+region_rect = Rect2( 0, 0, 7.82365, 8.05015 )
 
 [node name="Label" type="Label" parent="CanvasLayer/HealthPotions"]
 margin_left = 19.0
@@ -360,7 +356,6 @@ text = "0"
 align = 2
 
 [node name="ManaPotions" type="ColorRect" parent="CanvasLayer"]
-visible = false
 margin_left = 281.0
 margin_top = 158.0
 margin_right = 317.0
@@ -372,7 +367,7 @@ script = ExtResource( 41 )
 position = Vector2( 10, 10 )
 texture = ExtResource( 40 )
 region_enabled = true
-region_rect = Rect2( 16, 0, 16, 16 )
+region_rect = Rect2( 8.92831, -0.104319, 6.10249, 7.93323 )
 
 [node name="Label" type="Label" parent="CanvasLayer/ManaPotions"]
 margin_left = 19.0
@@ -384,6 +379,7 @@ text = "0"
 align = 2
 
 [node name="GameOver" type="ColorRect" parent="CanvasLayer"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 320.0
 margin_bottom = 180.0
@@ -413,6 +409,7 @@ align = 1
 
 [node name="LevelPopup" type="Popup" parent="CanvasLayer"]
 pause_mode = 2
+visible = true
 margin_right = 100.0
 margin_bottom = 50.0
 popup_exclusive = true
@@ -431,7 +428,7 @@ margin_right = 100.0
 margin_bottom = 11.0
 custom_colors/font_color = Color( 0.352941, 0.352941, 0.352941, 1 )
 custom_fonts/font = ExtResource( 38 )
-text = "New Level!"
+text = "Nuevo Nivel"
 align = 1
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/LevelPopup/ColorRect"]
@@ -495,7 +492,7 @@ margin_right = 180.0
 margin_bottom = 20.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 38 )
-text = "RESUME GAME"
+text = "REANUDAR"
 align = 1
 valign = 1
 
@@ -513,7 +510,7 @@ margin_right = 180.0
 margin_bottom = 20.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 38 )
-text = "SAVE GAME"
+text = "GUARDAR"
 align = 1
 valign = 1
 
@@ -531,7 +528,7 @@ margin_right = 180.0
 margin_bottom = 20.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 38 )
-text = "MAIN MENU"
+text = "SALIR"
 align = 1
 valign = 1
 
@@ -552,9 +549,6 @@ custom_fonts/normal_font = ExtResource( 38 )
 bbcode_enabled = true
 bbcode_text = "[center][wave amp=40 freq=2]ZZZ...[/wave][/center]"
 text = "ZZZ..."
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SkeletonSpawner" parent="." instance=ExtResource( 46 )]
 
